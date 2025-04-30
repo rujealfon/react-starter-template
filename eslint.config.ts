@@ -3,18 +3,28 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import prettierPlugin from 'eslint-plugin-prettier';
+import tsParser from '@typescript-eslint/parser';
 
 export default [
-  { ignores: ['dist'] },
   {
-    files: ['**/*.{js,jsx}'],
+    ignores: [
+      'dist',
+      'vite.config.ts',
+      'eslint.config.ts',
+      'src/routeTree.gen.ts',
+    ],
+  },
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parser: tsParser,
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
+        project: './tsconfig.json',
       },
     },
     plugins: {
