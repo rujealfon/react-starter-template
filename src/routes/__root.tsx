@@ -5,7 +5,7 @@ export const Route = createRootRoute({
   component: RootLayout,
 });
 
-export function RootLayout() {
+function RootLayout() {
   return (
     <div>
       <div className="mb-4">
@@ -18,7 +18,8 @@ export function RootLayout() {
       </div>
 
       <nav style={{ marginBottom: 24 }}>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link> |
+        <Link to="/contact">Contact</Link>
       </nav>
       <Outlet />
     </div>

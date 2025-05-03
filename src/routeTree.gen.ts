@@ -11,15 +11,15 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as LayoutImport } from './routes/layout'
+import { Route as ContactImport } from './routes/contact'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const LayoutRoute = LayoutImport.update({
-  id: '/layout',
-  path: '/layout',
+const ContactRoute = ContactImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,11 +53,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
-    '/layout': {
-      id: '/layout'
-      path: '/layout'
-      fullPath: '/layout'
-      preLoaderRoute: typeof LayoutImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
   }
@@ -68,41 +68,41 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/layout': typeof LayoutRoute
+  '/contact': typeof ContactRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/layout': typeof LayoutRoute
+  '/contact': typeof ContactRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/layout': typeof LayoutRoute
+  '/contact': typeof ContactRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/layout'
+  fullPaths: '/' | '/about' | '/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/layout'
-  id: '__root__' | '/' | '/about' | '/layout'
+  to: '/' | '/about' | '/contact'
+  id: '__root__' | '/' | '/about' | '/contact'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  LayoutRoute: typeof LayoutRoute
+  ContactRoute: typeof ContactRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  LayoutRoute: LayoutRoute,
+  ContactRoute: ContactRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +117,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
-        "/layout"
+        "/contact"
       ]
     },
     "/": {
@@ -126,8 +126,8 @@ export const routeTree = rootRoute
     "/about": {
       "filePath": "about.tsx"
     },
-    "/layout": {
-      "filePath": "layout.tsx"
+    "/contact": {
+      "filePath": "contact.tsx"
     }
   }
 }

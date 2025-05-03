@@ -1,11 +1,15 @@
-import { Button } from '../../shared/ui/button';
+import { createFileRoute } from '@tanstack/react-router';
 
-export function HomePage() {
+export const Route = createFileRoute('/')({
+  component: Index,
+});
+
+function Index() {
   return (
     <div style={{ padding: 24 }}>
       <h1>Welcome to TanStack Router!</h1>
       <div className="flex flex-col items-center justify-center min-h-svh">
-        <Button variant="default">Click me</Button>
+        <a href="/about">Go to About</a>
       </div>
     </div>
   );
