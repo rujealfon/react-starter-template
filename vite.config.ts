@@ -14,8 +14,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    // TanStack Router plugin must come before react()
-    TanStackRouterVite({ target: 'react', autoCodeSplitting: true }),
+    // TanStack Router plugin removed to allow manual route tree
     react({
       babel: {
         plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]],
