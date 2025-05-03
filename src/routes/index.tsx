@@ -9,7 +9,7 @@ function Index() {
   return (
     <div style={{ padding: 24 }}>
       <h1>Welcome to TanStack Router!</h1>
-      <div className="flex flex-col items-center justify-center min-h-svh">
+      <div className="flex min-h-svh flex-col items-center justify-center">
         <Button variant="secondary">Click me</Button>
       </div>
     </div>
