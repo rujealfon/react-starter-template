@@ -37,10 +37,7 @@ export default [
       ...reactHooks.configs.recommended.rules,
       'prettier/prettier': 'warn',
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      'react-refresh/only-export-components': 'off', // Ignore for shadcn components
     },
     settings: {},
   },
